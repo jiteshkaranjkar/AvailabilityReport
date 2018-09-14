@@ -1,0 +1,27 @@
+.jumbotron {
+    margin-bottom: 4em;
+    /* background-color:transparent !important;  */
+    /* background-color: 'linear-gradient(45deg, #219653 30%, #FF8E53 90%)'; */
+  }
+  .person-wrapper {
+    margin-bottom: 2em;
+  }
+  
+  .profile-pic {
+    width: 50%;
+  }
+  
+  .btn-primary {
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    background-color: #2892D7;
+  }
+  
+  h3 {
+    margin-bottom: 1em;
+  }
+
+  #my-panel:hover * {
+    background: green;
+}

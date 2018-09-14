@@ -1,0 +1,26 @@
+{
+  "name": "AvailibilityReport",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"node ./bin/www\" \"cd client && npm start\""
+  },
+  "dependencies": {
+    "chart.js": "^2.7.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "loaders.css": "^0.1.2",
+    "morgan": "~1.9.0",
+    "react-loaders": "^3.0.1",
+    "xlsx": "^0.12.12"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^3.11.0"
+  }
+}
