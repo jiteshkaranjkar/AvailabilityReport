@@ -12,7 +12,6 @@ import Home from '../Home.jsx';
 export default class Header extends Component{
     render(){
         return(
-            <div>
                 <Router>
                 <div>
                     <Navigation />
@@ -35,7 +34,6 @@ export default class Header extends Component{
                     <Route path="/Reports" component={Reports} />
                 </div>
                 </Router>
-            </div>
         )
     }
 } 

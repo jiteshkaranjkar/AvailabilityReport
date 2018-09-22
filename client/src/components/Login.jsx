@@ -20,9 +20,9 @@ function Login(props) {
   const { classes } = props;
 
   return (
-    <div className="container">
+    <div>
         <div className={classes.root}>
-        <Grid container spacing={24}>
+        <Grid spacing={24}>
             <Grid item xs={12}>
             <Paper className={classes.paper}>xs=12</Paper>
             </Grid>

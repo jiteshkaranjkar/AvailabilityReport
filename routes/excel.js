@@ -4,7 +4,7 @@ const XLSX    = require('xlsx');
 const fs      = require("fs");
 
 
-var avalabilityReportFileName = "National Availability.xlsx";
+var avalabilityReportFileName = "National Availability Report.xlsx";
 var sheetNameAR = "Excel Export_1";
 var scheduledUtilizationFileName = "Scheduled Utilisation by OU Next 6 Months.xlsx";
 var sheetNameSU = "Page1_1"; 

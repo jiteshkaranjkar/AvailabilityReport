@@ -23,7 +23,13 @@ import PagesIcon from '@material-ui/icons/Pages';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Bar, Pie, Doughnut, Polar } from 'react-chartjs-2';
-import './SideBarMenu.css'
+import './SideBarMenu.css';
+import ChartistGraph from "react-chartist";
+import {
+  dailySalesChart,
+  emailsSubscriptionChart,
+  completedTasksChart
+} from "../variables/charts";
 
 const drawerWidth = 175;
 const styles = theme => ({
@@ -113,6 +119,8 @@ class MiniDrawer extends React.Component {
 
   render() {
     const { classes, theme } = this.props;
+    // debugger;
+    //this.state.chartData;
     return (
       <div className={classes.root}>
         <AppBar position="absolute" className={classNames(classes.appBar, this.state.open && classes.appBarShift)}>
@@ -176,7 +184,7 @@ class MiniDrawer extends React.Component {
           {/* <Typography noWrap>
             {'Chart Data for '} <b> {this.state.selectedItem} </b> */}
               <div className="mainDiv">
-              <Grid container spacing={24}>
+              <Grid container spacing={24}  xs={12} sm={12} md={12}>
                   <Grid item xs={12} sm={6}>
                     <Paper >
                       <Bar data={this.state.chartData} options={barOptions}  width="500" height="300"/>
@@ -194,7 +202,14 @@ class MiniDrawer extends React.Component {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Paper >
-                      <Polar data={this.state.chartData} options={options} width="500" height="300"/>
+                      <Polar data={this.state.chartData} options={options} width="500" height="300"/>    
+                  {/*       <ChartistGraph
+                        className="ct-chart"
+                        data={this.state.chartData.data}
+                        type="Line"
+                        options={this.state.chartData.options}
+                        listener={this.state.chartData.animation}
+                      /> */}                 
                     </Paper>
                   </Grid>
               </Grid>

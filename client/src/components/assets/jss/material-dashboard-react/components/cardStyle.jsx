@@ -15,7 +15,7 @@ const cardStyle = {
     wordWrap: "break-word",
     fontSize: ".875rem",
     //maxwidth: 400,
-    height:200
+    //height:200
   },
   cardPlain: {
     background: "transparent",

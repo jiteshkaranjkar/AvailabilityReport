@@ -53,7 +53,7 @@ export default class Charts extends Component{
 
                     <Grid>
                     <h2>Chart Component</h2>    
-                    <div className="container">
+                    <div>
                         <div className="row">
                             <div className="col-sm">
                         <Bar data={officeChart} width={100} height={50}/>

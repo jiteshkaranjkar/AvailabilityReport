@@ -33,12 +33,6 @@ class Home extends React.Component {
         this.getSydneyNumbers();
       return (
         <div>
-        {/* <Grid> */}
-          {/* <Jumbotron>
-            <h2>Welcome to National Availabilty & Utilisation application</h2>
-            <p>This is the Nationality Availability Report application detailing about the resource availability.</p>
-          </Jumbotron> */}
-        
           <HomeLayout numbers={this.state.numbers} />
           </div>
         );
@@ -58,7 +52,7 @@ class Home extends React.Component {
 
   getSydneyNumbers(){
     var locationNos = [];
-    debugger;
+    //debugger;
     for(let key in this.state.numbers.offices){
       if(key !== 'swap'){
         locationNos.push(
@@ -83,7 +77,6 @@ class Home extends React.Component {
       }
       return keyValue;
   }  
-
 }
 
 

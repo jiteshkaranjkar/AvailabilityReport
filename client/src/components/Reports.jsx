@@ -26,9 +26,6 @@ export default class Reports extends Component{
                         defaultFilterMethod={(filter, row) =>
                         String(row[filter.id]) === filter.value}
                         columns={context.columns} 
-                        // showPagination= "true"
-                        // showPaginationBottom= "true"
-                        // showPageSizeOptions= "true"
                         defaultPageSize= {20}
                         defaultSorted={[
                             {

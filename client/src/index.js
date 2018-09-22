@@ -7,11 +7,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 ReactDOM.render(
-    <MuiThemeProvider theme={theme}>
         <div color="background">
             <App />
-        </div>
-    </MuiThemeProvider>, document.getElementById('BasicReact'));
+        </div>, document.getElementById('BasicReact'));
 registerServiceWorker();
 
 const theme = createMuiTheme({

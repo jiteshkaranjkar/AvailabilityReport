@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchReport } from './Context/actions/reportActions'; 
 import MiniDrawer from './Layout/SideBarMenu.jsx';
 import './Dashboard.css'
+var Chartist = require("chartist");
 
 const styles = theme => ({
   root: {
@@ -109,6 +110,8 @@ class Dashboard extends React.Component {
   };
 
   getChartData(fieldName, field, fieldKeyValuePair){
+    // debugger;
+
     let officeKeys = [];
     let officeCounts = [];
     officeCounts.push(Object.values(fieldKeyValuePair));
@@ -128,6 +131,79 @@ class Dashboard extends React.Component {
       }
       return officeChart;
   }
+
+  
+dailySalesChart(fieldName, field, fieldKeyValuePair){
+  // debugger;
+  
+var delays = 80,
+durations = 500;
+var delays2 = 80,
+durations2 = 500;
+
+  let officeKeys = [];
+  let officeCounts = [];
+  officeCounts.push(Object.values(fieldKeyValuePair));
+  officeKeys.push(Object.keys(fieldKeyValuePair));
+  let data= {
+    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  series: [
+    [12, 9, 7, 8, 5],
+    [2, 1, 3.5, 7, 3],
+    [1, 3, 4, 5, 6]
+  ]
+  };
+  let options= {
+    lineSmooth: Chartist.Interpolation.cardinal({
+      tension: 0
+    }),
+    low: 0,
+    high: 12, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    chartPadding: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0
+    }
+  };
+  // for animation
+  let animation= {
+    draw: function(data) {
+      if (data.type === "line" || data.type === "area") {
+        data.element.animate({
+          d: {
+            begin: 600,
+            dur: 700,
+            from: data.path
+              .clone()
+              .scale(1, 0)
+              .translate(0, data.chartRect.height())
+              .stringify(),
+            to: data.path.clone().stringify(),
+            easing: Chartist.Svg.Easing.easeOutQuint
+          }
+        });
+      } else if (data.type === "point") {
+        data.element.animate({
+          opacity: {
+            begin: (data.index + 1) * delays,
+            dur: durations,
+            from: 0,
+            to: 1,
+            easing: "ease"
+          }
+        });
+      }
+    }
+  }
+  let dailySalesChart = {
+    data: data,
+    options:options,
+    animation : animation
+  }
+  return dailySalesChart;
+};
+
 
   breakUpReportDataIntoColumnDataChildCallback(eventName, fieldName){
     //var employees = this.props.report.map((x) => x["Employee Name"]);  
